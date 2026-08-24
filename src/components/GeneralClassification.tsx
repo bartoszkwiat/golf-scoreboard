@@ -4,7 +4,7 @@ import { useMemo, useState } from "react";
 import { ChevronDown, Star } from "lucide-react";
 import type { FollowedPlayer, GeneralPlayerEntry } from "@/lib/types";
 import { GENDER_LABEL } from "@/lib/types";
-import { fullName, initials, medalStyle, countryFlag } from "@/lib/format";
+import { fullName, initials, medalStyle } from "@/lib/format";
 import { isFollowing, isSamePlayer } from "@/lib/useFollowedPlayer";
 import { useGeneralClassification } from "@/lib/useGeneralClassification";
 import { MIN_ROUNDS_FOR_GENERAL, ROUNDS } from "@/lib/config";
@@ -189,7 +189,6 @@ function Row({
   onUnfollow: (player: FollowedPlayer) => void;
 }) {
   const medal = entry.position <= 3 ? medalStyle(entry.position) : null;
-  const flag = countryFlag(entry.countrySymbol);
 
   return (
     <>
@@ -219,7 +218,6 @@ function Row({
             </span>
             <div className="min-w-0">
               <div className="flex items-center gap-1.5">
-                {flag && <span className="text-[13px] leading-none">{flag}</span>}
                 <span className="truncate text-[13.5px] font-semibold text-tour-ink">
                   {fullName(entry.firstName, entry.lastName)}
                 </span>

@@ -9,7 +9,6 @@ import {
   toParColorClass,
   fullName,
   initials,
-  countryFlag,
   medalStyle,
   positionAsNumber,
 } from "@/lib/format";
@@ -100,7 +99,6 @@ function Row({
 }) {
   const posNum = positionAsNumber(item.position_name);
   const medal = medalStyle(posNum);
-  const flag = countryFlag(item.country_symbol);
 
   return (
     <>
@@ -130,7 +128,6 @@ function Row({
             </span>
             <div className="min-w-0">
               <div className="flex items-center gap-1.5">
-                {flag && <span className="text-[13px] leading-none">{flag}</span>}
                 <span className="truncate text-[13.5px] font-semibold text-tour-ink">
                   {fullName(item.first_name, item.last_name)}
                 </span>

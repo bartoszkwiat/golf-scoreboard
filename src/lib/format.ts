@@ -34,17 +34,6 @@ export function initials(firstName: string, lastName: string): string {
   return `${f}${l}`.toUpperCase();
 }
 
-/** ISO 3166-1 alpha-2 code (e.g. "pl") -> flag emoji (e.g. 🇵🇱). */
-export function countryFlag(code: string | undefined): string {
-  if (!code || code.length !== 2) return "";
-  const base = 0x1f1e6 - "a".charCodeAt(0);
-  const chars = code
-    .toLowerCase()
-    .split("")
-    .map((c) => String.fromCodePoint(base + c.charCodeAt(0)));
-  return chars.join("");
-}
-
 export interface MedalStyle {
   badge: string;
   ring: string;
