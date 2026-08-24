@@ -1,0 +1,56 @@
+@import "tailwindcss";
+
+:root {
+  --background: #f6f7f5;
+  --foreground: #121814;
+  --tour-ink: #121814;
+  --tour-red: #c31f2c;
+  --tour-green: #0b5d34;
+  --tour-gold: #b8912b;
+  --tour-line: #e5e7e1;
+  --tour-header: #0a1c12;
+  --tour-header-2: #132b1c;
+}
+
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-tour-ink: var(--tour-ink);
+  --color-tour-red: var(--tour-red);
+  --color-tour-green: var(--tour-green);
+  --color-tour-gold: var(--tour-gold);
+  --color-tour-line: var(--tour-line);
+  --color-tour-header: var(--tour-header);
+  --color-tour-header-2: var(--tour-header-2);
+  --font-sans: var(--font-geist-sans);
+  --font-mono: var(--font-geist-mono);
+}
+
+* {
+  -webkit-tap-highlight-color: transparent;
+}
+
+body {
+  background: var(--background);
+  color: var(--foreground);
+}
+
+.tabular-nums {
+  font-variant-numeric: tabular-nums;
+}
+
+::-webkit-scrollbar {
+  height: 6px;
+  width: 6px;
+}
+::-webkit-scrollbar-thumb {
+  background: #d1d5db;
+  border-radius: 999px;
+}
+
+.scrollbar-none {
+  scrollbar-width: none;
+}
+.scrollbar-none::-webkit-scrollbar {
+  display: none;
+}
